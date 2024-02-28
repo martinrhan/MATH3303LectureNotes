@@ -1,0 +1,87 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\renewcommand{\Im}{\text{Im}}
+\newcommand{\rightarrows}{\ \rightarrow\ }
+
+\begin{document}
+	\section*{First Isomorphism Theorem}
+	Let $f:G\rightarrow H$ be a group homomorphism. The
+	\begin{itemize}
+		\item $K=\ker(f):={g\in G|f(g)=1_H}$ is a normal subgroup of $G$,
+		\item $\Im(f)$ is a subgroup of $H$, and
+		\item $G/K$ is isomorphic to $\Im(f)$.
+	\end{itemize}
+	In fact, the isomorphism is given by$$
+		\bar{f}:G/K\rightarrow\Im(f),\ \ \bar{f}(\bar{g})=\bar{f}(gK)=f(g)
+	$$
+	\subsection*{$\bar{f}$ is well defined}
+	Let $\bar{g}_1,\bar{g}_2\in G/K$, the statement is true iff$$
+		\forall \bar{g}_1,\bar{g}_2\in G/K,\ \ \bar{g}_1=\bar{g}_2 \rightarrow \bar{f}(\bar{g}_1)=\bar{f}(\bar{g}_2)
+	$$
+	The proof is given by\begin{align*}
+		&\bar{g}_1=\bar{g}_2 \rightarrows g_1K=g_2K \rightarrows g_1^{-1}g_2\in K\\
+		\rightarrows& f(g_1^{-1}g_2)=1 \rightarrows f(g_1^{-1})f(g_2)=1\\
+		\rightarrows& f(g_1)=f(g_2)
+	\end{align*}
+	\subsection*{$K$ is a subgroup of $G$}
+	It's equivalent to $$
+		\forall k_1,k_2\in K,\ \ k_1k_2\in K
+	$$
+	Given any such $k_1,k_2$, since $f$ is an isomorphism, we have\begin{align*}
+		&f(k_1k_2)\\
+		=&f(k_1)f(k_2)\\
+		=&1_H1_H\\
+		=&1_H
+	\end{align*}
+	Therefore $k_1k_2\in K$.
+	\subsection*{$K$ is normal}
+	By definition, $K$ is a normal subgroup of $G$ iff $$
+		\forall k\in K, g\in G,\ \ gkg^{-1}\in K
+	$$
+	Given any $k,g$, since $f$ is an isomorphism, we have\begin{align*}
+		&f(gkg^{-1})\\
+		=&f(g)f(k)f(g^{-1})\\
+		=&f(k)
+	\end{align*}
+	Therefore $gkg^{-1}\in K$.
+	\subsection*{$\Im(f)$ is a subgroup of $H$}
+	It's equivalent to $$
+		\forall h_1,h_2\in\Im(f),\ \ h_1h_2\in\Im(f)
+	$$
+	Let $h_1 = f(g_1)$ and $h_2 = f(g_2)$, since $f$ is an isomorphism, \begin{align*}
+		h_1h_2 = f(g_1)f(g_2) = f(g_1g_2)
+	\end{align*}
+	As shown above, there $\exists$ something $\in G$ that maps to $h_1h_2$ by $f$.
+	\subsection*{$\bar{f}$ is an homomorphism}
+	What we need to prove to prove the statement is
+	$$
+		\forall \bar{g}_1,\bar{g}_2\in G/K,\ \ 
+		\bar{f}(\bar{g}_1\bar{g}_2)=\bar{f}(\bar{g}_1)\bar{f}(\bar{g}_2)
+	$$
+	The proof is given by\begin{align*}
+		&\bar{f}(\bar{g}_1\bar{g}_2)\\
+		=&\bar{f}((g_1K)(g_2K))\\
+		=&\bar{f}((g_1g_2K))\\
+		=&f(g_1g_2)\\
+		=&f(g_1)f(g)\\
+		=&\bar{f}(\bar{g}_1)\bar{f}(\bar{g}_2)
+	\end{align*}
+	\subsection*{$\bar{f}$ is surjective}
+	$\Im(\bar{f})=\{\bar{f}(\bar{g})|\bar{g}\in G/K\}=\{\bar{f}(gK)|g\in G\}=\{f(g)|g\in G\}=\Im(f)$\\
+	If $h\in\Im(f)$ then $h\in\Im(\bar{f})$.
+	\subsection*{$\bar{f}$ is injective}
+	Let $\bar{g}_1,\bar{g}_2\in G/K$, the proof is given by \begin{align*}
+		&\bar{f}(\bar{g}_1)=\bar{f}(\bar{g}_2) \\
+		\rightarrow &
+		\bar{f}(\bar{g}_1^{-1})\bar{f}(\bar{g}_1)=\bar{f}(\bar{g}_1^{-1})\bar{f}(\bar{g}_2) \\
+		\rightarrow &
+		\bar{f}(\bar{g}_1^{-1})\bar{f}(\bar{g}_2)=1\\
+		\rightarrow & f(g^{-1}g)=1\\
+		\rightarrow & g^{-1}g\in K\\
+		\rightarrow & g_1K=g_2K\\
+		\rightarrow & \bar{g}_1=\bar{g}_2
+	\end{align*}
+\end{document}

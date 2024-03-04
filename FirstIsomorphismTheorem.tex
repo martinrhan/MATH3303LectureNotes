@@ -26,9 +26,17 @@
 		\implies& f(g_1)=f(g_2)
 	\end{align*}
 	\subsection*{$K$ is a subgroup of $G$}
-	It's equivalent to $$
-		\forall k_1,k_2\in K,\ \ k_1k_2\in K
-	$$
+	\subsubsection*{Identity}
+	Since $f$ is a homomorphism, $f(1_G)=1_H$, therefore $1_G\in\ker(f)$
+	\subsubsection*{Inverse}
+	To prove: $\forall k\in K,\ k^{-1}\in K
+	$\\
+	Let $k\in K$, $f(kk^{-1})=f(1_G)=1_H=f(k)f(k^{-1})=1_Hf(k^{-1})$\\
+	As $1_H=1_Hf(k^{-1})$,$f(k^{-1})=1_H$
+	\subsubsection*{Operation}
+	To prove: $
+		\forall k_1,k_2\in K,\ k_1k_2\in K
+	$\\
 	Given any such $k_1,k_2$, since $f$ is an isomorphism, we have\begin{align*}
 		&f(k_1k_2)\\
 		=&f(k_1)f(k_2)\\
@@ -47,9 +55,17 @@
 	\end{align*}
 	Therefore $gkg^{-1}\in K$.
 	\subsection*{$\Im(f)$ is a subgroup of $H$}
-	It's equivalent to $$
-		\forall h_1,h_2\in\Im(f),\ \ h_1h_2\in\Im(f)
-	$$
+	\subsubsection*{Identity}
+	Since $G$ is a group, it has identity. Since $f$ is a homomorphism, $f(1_G)=1_H$. Therefore $1_H\in\Im(f)$
+	\subsubsection*{Inverse}
+	To prove: $
+		\forall h\in\Im(f), h^{-1}\in\Im(f)
+	$\\
+	Let $h\in\Im(f)$, then $\exists g\in G$ s.t. $f(g)=h$ and because $f$ is a homomorphism, $f(g^{-1})=h^{-1}$
+	\subsubsection*{Operation}
+	To prove: $
+		\forall h_1,h_2\in\Im(f), \ h_1h_2\in\Im(f)
+	$\\
 	Let $h_1 = f(g_1)$ and $h_2 = f(g_2)$, since $f$ is an isomorphism, \begin{align*}
 		h_1h_2 = f(g_1)f(g_2) = f(g_1g_2)
 	\end{align*}

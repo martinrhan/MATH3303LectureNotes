@@ -2,6 +2,8 @@
 
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{faktor}
 
 \renewcommand{\Im}{\text{Im}}
 
@@ -99,4 +101,47 @@
 		\implies & g_1K=g_2K\\
 		\implies & \bar{g}_1=\bar{g}_2
 	\end{align*}
+	
+		\section*{Second Isomorphism Theorem}
+	If $N\trianglelefteq G$ and $S\leq G$, then\begin{enumerate}
+		\item $N\cap S\trianglelefteq S$
+		\item $NS=\{ns|n\in N,s\in S\}\leq G$
+		\item $S/N\cap S\cong NS/N=SN/N$
+	\end{enumerate}
+	\subsection*{$N\cap S$ is a subgroup of $S$}
+	Since both $N$ and $S$ are subgroups of $G$, $1\in N$ and $1\in S$, therefore $1\in N\cap S$.\medskip\\
+	$\forall x_1,x_2\in N\cap S,$\begin{itemize}
+		\item Since $x_1,x_2\in N$ and $N$ is a group, $x_1x_2\in N$ 
+		\item Since $x_1,x_2\in S$ and $S$ is a group, $x_1x_2\in S$ 
+	\end{itemize}
+	Therefore $x_1x_2\in N\cap S$
+	\subsection*{$N\cap S$ is normal}
+	$\forall x\in N\cap S$, $\forall s\in S$\begin{itemize}
+		\item Since $x\in N$ and $N\trianglelefteq G$ and $s\in G$, $\ sxs^{-1}\in N$
+		\item Since $x\in S,$ and $S$ is a group, $sxs^{-1}\in S$
+	\end{itemize}
+	Therefore $sxs^{-1}\in N\cap S$
+	\subsection*{$NS$ is a subset of G}
+	$\forall n\in N,s\in S$, since both $n,s\in G$ and $G$ is a group, $ns\in G$
+	\subsection*{$NS$ is a group}
+	Obviously, $1_{NS}=1_N1_S\in NS$.\\
+	Let $x_1,x_2\in NS$, then exists $n_1s_1=x_1$ and $n_2s_2=x_2$. Thus $x_1x_2=n_1s_1n_2s_2$.\\
+	Since $N\trianglelefteq G$, any $n\in N$ has some $n'\in N$ such that $gng^{-1}=n'$ for all $g\in G$ as well as $s\in S\leq G$.\\
+	So let $n_2=s_1^{-1}n_2's_1$, we get $x_1x_2=n_1n_2's_1s_2\in NS$
+	\subsection*{$N$ is a normal subgroup of $NS$ }
+	Because $N\trianglelefteq G$ and $NS\leq G$
+	\subsection*{$S/N\cap S$ is isomorphic to $NS/N$}
+	Let $f:S\rightarrow NS/N$ be $f(s)=sN$. Then\begin{align*}
+		\ker(f) =& \{s\in S|f(s)=1_{NS/N}\}\\
+		=&\{s\in S|sN=N\}\\
+		=&\{s\in S|s\in N\}\\
+		=&S\cap N
+	\end{align*}
+	The statement is true by first isomorphism theorem.
+	
+	\section*{Third Isomorphism Theorem}
+	If $N\triangleleft M\triangleleft G$ and $N\triangleleft G$,
+	Then $M/N \triangleleft G/N$ and $$
+	\faktor{G/N}{M/N}=\faktor{G}{M}
+	$$
 \end{document}

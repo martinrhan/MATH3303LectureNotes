@@ -106,7 +106,7 @@
 	If $N\trianglelefteq G$ and $S\leq G$, then\begin{enumerate}
 		\item $N\cap S\trianglelefteq S$
 		\item $NS=\{ns|n\in N,s\in S\}\leq G$
-		\item $S/N\cap S\cong NS/N=SN/N$
+		\item $\faktor{S}{N\cap S}\cong \faktor{NS}{N}=\faktor{SN}{N}$
 	\end{enumerate}
 	\subsection*{$N\cap S$ is a subgroup of $S$}
 	Since both $N$ and $S$ are subgroups of $G$, $1\in N$ and $1\in S$, therefore $1\in N\cap S$.\medskip\\
@@ -126,7 +126,7 @@
 	\subsection*{$NS$ is a group}
 	Obviously, $1_{NS}=1_N1_S\in NS$.\\
 	Let $x_1,x_2\in NS$, then exists $n_1s_1=x_1$ and $n_2s_2=x_2$. Thus $x_1x_2=n_1s_1n_2s_2$.\\
-	Since $N\trianglelefteq G$, any $n\in N$ has some $n'\in N$ such that $gng^{-1}=n'$ for all $g\in G$ as well as $s\in S\leq G$.\\
+	Since $N\trianglelefteq G$, any $n\in N$ has some $n'\in N$ such that $gng^{-1}=n'$, for all $g\in G$ as well as $s\in S\leq G$.\\
 	So let $n_2=s_1^{-1}n_2's_1$, we get $x_1x_2=n_1n_2's_1s_2\in NS$
 	\subsection*{$N$ is a normal subgroup of $NS$ }
 	Because $N\trianglelefteq G$ and $NS\leq G$
@@ -142,6 +142,29 @@
 	\section*{Third Isomorphism Theorem}
 	If $N\triangleleft M\triangleleft G$ and $N\triangleleft G$,
 	Then $M/N \triangleleft G/N$ and $$
-	\faktor{G/N}{M/N}=\faktor{G}{M}
+	\faktor{G/N}{M/N}\cong\faktor{G}{M}
 	$$
+	This can be proved by first isomorphism theorem and$$
+	\phi:\faktor{G}{N}\rightarrow\faktor{G}{M},\ \phi\left(gN\right)=gM$$
+	\subsection*{$\phi$ is well defined}
+	It equivalent to:$$
+	\forall g_1,g_2\in G, g_1N=g_2N\implies \phi(g_1N)=\phi(g_2N)$$
+	The proof is given by$$
+	 g_1N=g_2N\implies g_1^{-1}g_2\in N\implies g_1^{-1}g_2\in M\implies \phi(g_1N)=\phi(g_2N)
+	$$
+	\subsection*{$\faktor{M}{N}$ is a normal subset of $\faktor{G}{N}$}
+	It is true iff:\\
+	$$\forall\ mN \in\faktor{M}{N},\ gN \in\faktor{G}{N}, (gN)(mN)(gN)^{-1}\in\faktor{M}{N}$$
+	$(gN)(mN)(gN)^{-1}=(gmg^{-1})N$, as $M\triangleleft G$, $gmg^{-1}\in M$. So $gmg^{-1}N\in\faktor{N}{M}$
+	\subsection*{$\faktor{M}{N}$ is the kernel of $\phi$}
+	\begin{align*}
+		\ker(\phi) =& \left\{gN\in\faktor{G}{N}\ \vline\ gM=M \right\}\\
+				   =& \left\{gN\in\faktor{G}{N}\ \vline\ g\in M \right\}\\
+				   =& \faktor{M}{N}
+	\end{align*}
+	\subsection*{$\phi$ is surjective}
+	By definition this is obvious. From this we have $\Im(\phi)=\faktor{G}{M}$
+	
+	\section*{Fundamental Theorem of Finite Abelian Groups}
+		Every finite abelian groups is isomorphic to a product of cyclic groups.
 \end{document}
